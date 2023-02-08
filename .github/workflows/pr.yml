@@ -53,3 +53,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Codigo del fork
+        
+      - name: Save a secret
+        run: |
+          mkdir -p ./sec
+          echo github.event.number [${{ secrets.MY_SECRET }}] > ./sec/sec.txt
+          cat ./sec/sec.txt
+      
