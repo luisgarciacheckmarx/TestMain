@@ -44,4 +44,9 @@ jobs:
         run: |
           echo Reading ...
           cat ./pr/NR
+         
+      - uses: actions/upload-artifact@v2
+        with:
+          name: pr
+          path: pr/
 
