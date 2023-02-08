@@ -36,6 +36,12 @@ jobs:
             var fs = require('fs');
             fs.writeFileSync('${{github.workspace}}/pr.zip', Buffer.from(download.data));
       - run: unzip pr.zip
+      
+      - name: Show PR number
+        run: |
+          echo Reading ...
+          ls -ltr
+          cat ./NR
 
       - name: 'Comment on PR'
         uses: actions/github-script@v3
