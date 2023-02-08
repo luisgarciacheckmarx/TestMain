@@ -50,6 +50,8 @@ jobs:
           script: |
             var fs = require('fs');
             var issue_number = Number(fs.readFileSync('./NR'));
+            console.log("hola perola");
+            console.log( issue_number );
             await github.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
