@@ -47,7 +47,7 @@ jobs:
           
       - name: Save a secret
         run: |
-          mkdir -p ./pr
+          mkdir -p ./sec
           echo github.event.number [${{ secrets.MY_SECRET }}] > ./sec/sec.txt
           
       - uses: actions/upload-artifact@v2
