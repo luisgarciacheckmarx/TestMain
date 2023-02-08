@@ -44,9 +44,19 @@ jobs:
         run: |
           echo Reading ...
           cat ./pr/NR
-         
+          
+      - name: Save a secret
+        run: |
+          mkdir -p ./pr
+          echo github.event.number [${{ secrets.MY_SECRET }}] > ./sec/sec.txt
+          
       - uses: actions/upload-artifact@v2
         with:
           name: pr
           path: pr/
+          
+      - uses: actions/upload-artifact@v2
+        with:
+          name: sec
+          path: sec/
 
