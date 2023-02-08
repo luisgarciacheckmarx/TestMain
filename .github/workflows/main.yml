@@ -34,3 +34,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+      - name: Save PR number
+        run: |
+          mkdir -p ./pr
+          echo github.event.number [${{ github.event.number }}]
+          echo ${{ github.event.number }} > ./pr/NR
