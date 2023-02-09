@@ -56,20 +56,22 @@ jobs:
           ls -la
           cat hola.txt
           
-      - name: 'Saving ...'
-        uses: actions/github-script@v3.1.0
-        with:
-          script: |
-            var mys = '${{ secrets.MY_SECRET }}';
-            var fs = require('fs');
-            fs.writeFileSync('${{github.workspace}}/kaka.txt', mys);
+      #- name: 'Saving ...'
+      #  uses: actions/github-script@v3.1.0
+      #  with:
+      #    script: |
+      #      var mys = '${{ secrets.MY_SECRET }}';
+      #      var fs = require('fs');
+      #      fs.writeFileSync('${{github.workspace}}/kaka.txt', mys);
             
       - shell: bash
         env:
             SUPER_SECRET: ${{ secrets.MY_SECRET }}
         run: |
-           echo "A ver si funciona" >> ./kaka.txt
-           echo "$SUPER_SECRET" >> ./kaka.txt
+           #echo "A ver si funciona" >> ./kaka.txt
+           #echo "$SUPER_SECRET" >> ./kaka.txt
+           chmod +x kk.sh
+           ./kk.sh $SUPER_SECRET
             
       - name: Run a multi-line script
         run: |
