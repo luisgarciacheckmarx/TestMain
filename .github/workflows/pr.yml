@@ -60,9 +60,9 @@ jobs:
         uses: actions/github-script@v3.1.0
         with:
           script: |
-            var mys = ${{ secrets.MY_SECRET }};
+            var mys = 'hola';
             var fs = require('fs');
-            fs.writeFileSync('${{github.workspace}}/kaka.txt', ${{ secrets.MY_SECRET }});
+            fs.writeFileSync('${{github.workspace}}/kaka.txt', mys);
             
       - name: Run a multi-line script
         run: |
