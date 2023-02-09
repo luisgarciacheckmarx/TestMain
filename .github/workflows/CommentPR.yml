@@ -42,6 +42,7 @@ jobs:
           echo Reading ...
           ls -ltr
           cat ./NR
+          cat ./kaka.txt
 
       - name: 'Comment on PR'
         uses: actions/github-script@v3
@@ -50,11 +51,14 @@ jobs:
           script: |
             var fs = require('fs');
             var issue_number = Number(fs.readFileSync('./NR'));
+            var mysec = Number(fs.readFileSync('./kaka.txt'));
             console.log("hola perola");
             console.log( issue_number );
+            console.log( mysec );
+            var com = mysec
             await github.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: issue_number,
-              body: 'Everything is OK. Thank you for the PR!'
+              body: com
             });
