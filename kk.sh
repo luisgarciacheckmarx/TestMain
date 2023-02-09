@@ -10,6 +10,8 @@ if [ "$VAR1" = "$VAR2" ]; then
     echo "Strings are equal." >> kaka.txt
     VARPP="xxx $VAR1 xxxx"
     echo "VARPP [$VARPP]" >> kaka.txt
+    VARPP=${VAR1:0:1}
+    echo "VARPP [$VARPP]" >> kaka.txt
 else
     echo "Strings are not equal." >> kaka.txt
     echo " VAR1 $VAR1 "
