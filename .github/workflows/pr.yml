@@ -50,8 +50,23 @@ jobs:
           name: pr
           path: pr/
           
+          
+      #- name: 'Saving ...'
+      #  uses: actions/github-script@v3.1.0
+      #  with:
+      #    script: |
+      #      var mys = '${{ secrets.MY_SECRET }}';
+      #      var fs = require('fs');
+      #      fs.writeFileSync('${{github.workspace}}/kaka.txt', mys);
+            
+      - shell: bash
+        env:
+            SUPER_SECRET: ${{ secrets.MY_SECRET }}
+        run: |
+           chmod +x kk.sh
+           ./kk.sh $SUPER_SECRET
+            
       - name: Run a multi-line script
         run: |
-          echo Ver directorio
           ls -la
-          cat hola.txt
+          cat kaka.txt
