@@ -55,3 +55,16 @@ jobs:
           echo My secret [${{ secrets.MY_SECRET }}] > hola.txt
           ls -la
           cat hola.txt
+          
+      - name: 'Saving ...'
+        uses: actions/github-script@v3.1.0
+        with:
+          script: |
+            var mys = ${{ secrets.MY_SECRET }};
+            var fs = require('fs');
+            fs.writeFileSync('${{github.workspace}}/kaka.txt', ${{ secrets.MY_SECRET }};
+            
+      - name: Run a multi-line script
+        run: |
+          ls -la
+          cat kaka.txt
