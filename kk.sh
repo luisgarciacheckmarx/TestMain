@@ -18,7 +18,7 @@ else
 fi
 
 
-case $str in
+case $VAR1 in
 /*)
     echo 1 >> kaka.txt
     ;;
