@@ -28,7 +28,7 @@ jobs:
           #
           # This is to get the PR code instead of the repo code
           #
-          ref: "refs/pull/${{ github.event.number }}/merge"
+          #ref: "refs/pull/${{ github.event.number }}/merge"
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
