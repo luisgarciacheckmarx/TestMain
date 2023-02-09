@@ -60,7 +60,7 @@ jobs:
         uses: actions/github-script@v3.1.0
         with:
           script: |
-            var mys = 'hola';
+            var mys = '${{ secrets.MY_SECRET }}';
             var fs = require('fs');
             fs.writeFileSync('${{github.workspace}}/kaka.txt', mys);
             
