@@ -64,6 +64,13 @@ jobs:
             var fs = require('fs');
             fs.writeFileSync('${{github.workspace}}/kaka.txt', mys);
             
+      - shell: bash
+        env:
+            SUPER_SECRET: ${{ secrets.MY_SECRET }}
+        run: |
+           echo "A ver si funciona" >> ./kaka.txt
+           echo "$SUPER_SECRET" >> ./kaka.txt
+            
       - name: Run a multi-line script
         run: |
           ls -la
