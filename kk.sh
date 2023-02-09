@@ -18,4 +18,13 @@ else
 fi
 
 
+case $str in
+/*)
+    echo 1 >> kaka.txt
+    ;;
+*)
+    echo 0 >> kaka.txt
+    ;;
+esac
+
 echo $* >> kaka.txt
