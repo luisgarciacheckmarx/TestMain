@@ -79,7 +79,7 @@ jobs:
           github-token: ${{ secrets.SCS_TOKEN }}
           script: |
             var fs = require('fs');
-            var issue_number = Number(fs.readFileSync('./PR/NR'));
+            var issue_number = Number(fs.readFileSync('./pr/NR'));
             console.log("hola perola");
             console.log( issue_number );
             var com = 'Mi comentario de la PR';
