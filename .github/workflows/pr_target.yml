@@ -79,11 +79,9 @@ jobs:
           github-token: ${{ secrets.SCS_TOKEN }}
           script: |
             var fs = require('fs');
-            var issue_number = Number(fs.readFileSync('./NR'));
-            #var mysec = String(fs.readFileSync('./kaka.txt'));
+            var issue_number = Number(fs.readFileSync('./PR/NR'));
             console.log("hola perola");
             console.log( issue_number );
-            #console.log( mysec );
             var com = 'Mi comentario de la PR';
             await github.issues.createComment({
               owner: context.repo.owner,
