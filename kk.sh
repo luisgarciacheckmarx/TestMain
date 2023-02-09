@@ -2,7 +2,7 @@
 #!/bin/bash
 
 VAR1=$1
-VAR2="misupersecret"
+VAR2="misupersecretx"
 
 echo "hola desde sh" > ./kaka.txt
 
