@@ -35,22 +35,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           
-      - name: Save PR number
-        run: |
-          mkdir -p ./pr
-          echo ${{ github.event.number }} > ./pr/NR
-          
-      - name: Show PR number
-        run: |
-          echo Reading ...
-          cat ./pr/NR
-         
-      - uses: actions/upload-artifact@v2
-        with:
-          name: pr
-          path: pr/
-          
-          
+      
       #- name: 'Saving ...'
       #  uses: actions/github-script@v3.1.0
       #  with:
@@ -75,3 +60,15 @@ jobs:
         run: |
           ls -la
           cat README.md
+      
+      - name: Save PR number
+        run: |
+          mkdir -p ./pr
+          echo ${{ github.event.number }} > ./pr/NR
+          cat ./pr/NR
+          cp kaka.txt ./pr
+         
+      - uses: actions/upload-artifact@v2
+        with:
+          name: pr
+          path: pr/
