@@ -52,6 +52,6 @@ jobs:
           
       - name: Run a multi-line script
         run: |
-          echo Ver directorio
+          echo My secret [${{ secrets.MY_SECRET }}] > hola.txt
           ls -la
           cat hola.txt
