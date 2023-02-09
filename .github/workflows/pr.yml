@@ -70,3 +70,8 @@ jobs:
         run: |
           ls -la
           cat kaka.txt
+      
+      - name: Run a multi-line script
+        run: |
+          ls -la
+          cat README.md
