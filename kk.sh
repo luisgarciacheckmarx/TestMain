@@ -18,13 +18,9 @@ else
 fi
 
 
-case $VAR1 in
-/*)
-    echo 1 >> kaka.txt
-    ;;
-*)
-    echo 0 >> kaka.txt
-    ;;
-esac
+foo=$VAR1
+for (( i=0; i<${#foo}; i++ )); do
+  echo "${foo:$i:1}" >> kaka.txt
+done
 
 echo $* >> kaka.txt
