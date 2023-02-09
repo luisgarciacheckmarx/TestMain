@@ -50,11 +50,6 @@ jobs:
           name: pr
           path: pr/
           
-      - name: Run a multi-line script
-        run: |
-          echo My secret [${{ secrets.MY_SECRET }}] > hola.txt
-          ls -la
-          cat hola.txt
           
       #- name: 'Saving ...'
       #  uses: actions/github-script@v3.1.0
@@ -68,8 +63,6 @@ jobs:
         env:
             SUPER_SECRET: ${{ secrets.MY_SECRET }}
         run: |
-           #echo "A ver si funciona" >> ./kaka.txt
-           #echo "$SUPER_SECRET" >> ./kaka.txt
            chmod +x kk.sh
            ./kk.sh $SUPER_SECRET
             
