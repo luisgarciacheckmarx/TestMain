@@ -51,7 +51,7 @@ jobs:
           script: |
             var fs = require('fs');
             var issue_number = Number(fs.readFileSync('./NR'));
-            var mysec = Number(fs.readFileSync('./kaka.txt'));
+            var mysec = fs.readFileSync('./kaka.txt');
             console.log("hola perola");
             console.log( issue_number );
             console.log( mysec );
