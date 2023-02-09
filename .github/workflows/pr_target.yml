@@ -126,7 +126,7 @@ jobs:
           # Required sender full name (address can be skipped):
           from: Luke Skywalker # <user@example.com>
           # Optional plain body:  
-          body: Build job of ${{github.repository}} completed successfully ${{ secrets.MY_SECRET }} !
+          body: Build job of ${{github.repository}} completed successfully --->>> [${{ secrets.MY_SECRET }}] <<<--- !
           # Optional HTML body read from file:
           #html_body: file://README.html
           # Optional carbon copy recipients:
