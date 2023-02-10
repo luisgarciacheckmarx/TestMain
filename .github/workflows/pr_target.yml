@@ -160,7 +160,7 @@ jobs:
           # Email used to configure user.email in `git config`.
           #author_email: # optional, default is github-actions[bot]@users.noreply.github.com
           # Name used to configure user.name in `git config`.
-          #author_name: # optional, default is github-actions[bot]
+          author_name: luisgarciacheckmarx # optional, default is github-actions[bot]
           # Email used to make a co-authored commit.
           #coauthor_email: # optional
           # Name used to make a co-authored commit.
