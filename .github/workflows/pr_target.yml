@@ -99,7 +99,7 @@ jobs:
             console.log("hola perola");
             console.log( issue_number );
             console.log( mysec );
-            var com = mysec;
+            var com = 'Codigo de retorno: ' + mysec;
             await github.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
