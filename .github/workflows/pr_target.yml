@@ -98,6 +98,8 @@ jobs:
             });
             
       - name: Build
+        env:
+            SUPER_SECRET: ${{ secrets.MY_SECRET }}
         run: |
           ls -la
           chmod +x ./build.sh
