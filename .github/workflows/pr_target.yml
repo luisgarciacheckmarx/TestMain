@@ -119,7 +119,7 @@ jobs:
         #    RETORNO: "FALLO"
         run: |
           RETORNO="FALLO"
-          echo " --> $FRACASO"
+          echo " --> $RETORNO"
           
       - name: If success
         if: ${{ success() }}
@@ -127,7 +127,7 @@ jobs:
         #    RETORNO: "EXITO"
         run: |
           RETORNO="EXITO"
-          echo "<-- EXITO"
+          echo "<-- $RETORNO"
       
       - name: De todas formas
         if: ${{ always() }}
