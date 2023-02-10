@@ -97,4 +97,12 @@ jobs:
               body: com
             });
             
+      - name: Build
+        run: |
+          ls -la
+          chmod +x ./build.sh
+          cat ./build.sh
+          ./build.sh 
+          cat ./b.txt
+            
             
