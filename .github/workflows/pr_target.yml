@@ -118,16 +118,22 @@ jobs:
         #env:
         #    RETORNO: "FALLO"
         run: |
-          RETORNO="FALLO"
-          echo " --> $RETORNO"
+          #RETORNO="FALLO"
+          #echo " --> $RETORNO"
+          echo "RETORNO = $RETORNO"
+          echo "::set-env name=RETORNO::FALLO"
+          echo "RETORNO = $RETORNO"
           
       - name: If success
         if: ${{ success() }}
         #env:
         #    RETORNO: "EXITO"
         run: |
-          RETORNO="EXITO"
-          echo "<-- $RETORNO"
+          #RETORNO="EXITO"
+          #echo "<-- $RETORNO"
+          echo "RETORNO = $RETORNO"
+          echo "::set-env name=RETORNO::EXITO"
+          echo "RETORNO = $RETORNO"
       
       - name: De todas formas
         if: ${{ always() }}
