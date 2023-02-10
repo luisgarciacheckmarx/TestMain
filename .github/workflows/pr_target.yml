@@ -103,6 +103,7 @@ jobs:
           chmod +x ./build.sh
           cat ./build.sh
           ./build.sh 
+          ls -la
           cat ./b.txt
             
             
