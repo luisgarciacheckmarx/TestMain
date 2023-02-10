@@ -107,7 +107,7 @@ jobs:
           ./build.sh 
           ls -la
           cat ./b.txt
-          exit 0
+          exit 1
         continue-on-error: true
       
       - name: If success
