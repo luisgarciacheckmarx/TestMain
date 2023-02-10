@@ -107,18 +107,27 @@ jobs:
           ./build.sh 
           ls -la
           cat ./b.txt
-          exit 0
+          exit 1
         #continue-on-error: true
       
       - name: If error
         if: ${{ failure() }}
+        env:
+            RETORNO: "FALLO"
         run: |
           echo "FRACASO"
           
       - name: If success
         if: ${{ success() }}
+        env:
+            RETORNO: "EXITO"
         run: |
           echo "EXITO"
+      
+      - name: De todas formas
+        if: ${{ always() }}
+        run: |
+          echo "${{ env.RETORNO }} ESTO SIEMPRE"
           
       
       
