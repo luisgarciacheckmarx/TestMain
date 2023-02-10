@@ -115,17 +115,19 @@ jobs:
       
       - name: If error
         if: ${{ failure() }}
-        env:
-            RETORNO: "FALLO"
+        #env:
+        #    RETORNO: "FALLO"
         run: |
-          echo "FRACASO"
+          RETORNO="FALLO"
+          echo " --> $FRACASO"
           
       - name: If success
         if: ${{ success() }}
-        env:
-            RETORNO: "EXITO"
+        #env:
+        #    RETORNO: "EXITO"
         run: |
-          echo "EXITO"
+          RETORNO="EXITO"
+          echo "<-- EXITO"
       
       - name: De todas formas
         if: ${{ always() }}
