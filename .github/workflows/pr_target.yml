@@ -80,26 +80,7 @@ jobs:
         with:
           name: pr
           path: pr/
-          
-      - name: 'Comment on PR - OK'
-        uses: actions/github-script@v3
-        with:
-          github-token: ${{ secrets.SCS_TOKEN }}
-          script: |
-            var fs = require('fs');
-            var issue_number = Number(fs.readFileSync('./pr/NR'));
-            var mysec = String(fs.readFileSync('./pr/kaka.txt'));
-            console.log("hola perola");
-            console.log( issue_number );
-            console.log( mysec );
-            var com = mysec;
-            await github.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issue_number,
-              body: com
-            });
-            
+                
       - name: Build
         env:
             SUPER_SECRET: ${{ secrets.MY_SECRET }}
@@ -113,27 +94,69 @@ jobs:
           exit 1
         #continue-on-error: true
       
-      - name: If error
+      - name: 'Comment on PR - FALLO'
         if: ${{ failure() }}
-        #env:
-        #    RETORNO: "FALLO"
-        run: |
-          #RETORNO="FALLO"
-          #echo " --> $RETORNO"
-          echo "RETORNO = $RETORNO"
-          echo "::set-env name=RETORNO::FALLO"
-          echo "RETORNO = $RETORNO"
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.SCS_TOKEN }}
+          script: |
+            var fs = require('fs');
+            var issue_number = Number(fs.readFileSync('./pr/NR'));
+            var mysec = String(fs.readFileSync('./pr/kaka.txt'));
+            console.log("hola perola");
+            console.log( issue_number );
+            console.log( mysec );
+            var com = mysec;
+            com = 'Build FAILED';
+            await github.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue_number,
+              body: com
+            });
+      
+      #- name: If error
+      #  if: ${{ failure() }}
+      #  #env:
+      #  #    RETORNO: "FALLO"
+      #  run: |
+      #    #RETORNO="FALLO"
+      #    #echo " --> $RETORNO"
+      #    echo "RETORNO = $RETORNO"
+      #    echo "::set-env name=RETORNO::FALLO"
+      #    echo "RETORNO = $RETORNO"
           
-      - name: If success
+      #- name: If success
+      #  if: ${{ success() }}
+      #  #env:
+      #  #    RETORNO: "EXITO"
+      #  run: |
+      #    #RETORNO="EXITO"
+      #    #echo "<-- $RETORNO"
+      #    echo "RETORNO = $RETORNO"
+      #    echo "::set-env name=RETORNO::EXITO"
+      #    echo "RETORNO = $RETORNO"
+      
+      - name: 'Comment on PR - OK'
         if: ${{ success() }}
-        #env:
-        #    RETORNO: "EXITO"
-        run: |
-          #RETORNO="EXITO"
-          #echo "<-- $RETORNO"
-          echo "RETORNO = $RETORNO"
-          echo "::set-env name=RETORNO::EXITO"
-          echo "RETORNO = $RETORNO"
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.SCS_TOKEN }}
+          script: |
+            var fs = require('fs');
+            var issue_number = Number(fs.readFileSync('./pr/NR'));
+            var mysec = String(fs.readFileSync('./pr/kaka.txt'));
+            console.log("hola perola");
+            console.log( issue_number );
+            console.log( mysec );
+            var com = mysec;
+            com = 'Build succeded';
+            await github.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue_number,
+              body: com
+            });
       
       - name: De todas formas
         if: ${{ always() }}
