@@ -1,1 +1,1 @@
-cat "Hola desde main" >> b.txt
+echo "Hola desde main" >> b.txt
