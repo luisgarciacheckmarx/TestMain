@@ -14,18 +14,18 @@ on:
   workflow_dispatch:
 
 permissions:
-  actions: write
-  checks: write
+  #actions: write
+  #checks: write
   contents: write
-  deployments: write
-  discussions: write
-  issues: write
-  packages: write
-  pages: write
-  pull-requests: write
-  repository-projects: write
-  security-events: write
-  statuses: write
+  #deployments: write
+  #discussions: write
+  #issues: write
+  #packages: write
+  #pages: write
+  #pull-requests: write
+  #repository-projects: write
+  #security-events: write
+  #statuses: write
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
