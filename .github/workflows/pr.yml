@@ -98,8 +98,8 @@ jobs:
           #empty: # optional
           # Determines if the commit should be amended
           #amend: # optional, default is false
-          # Determines if force push is used
-          #force: # optional
+          # Determines if force push is used # optional
+          force: true
           # Determines if --tags is used
           #tags: # optional
           # Directory to change to before pushing.
