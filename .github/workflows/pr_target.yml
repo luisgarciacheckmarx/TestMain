@@ -77,8 +77,8 @@ jobs:
         with:
           name: pr
           path: pr/
-      
-      - name: 'Comment on PR'
+          
+      - name: 'Comment on PR - OK'
         uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.SCS_TOKEN }}
@@ -107,5 +107,20 @@ jobs:
           ./build.sh 
           ls -la
           cat ./b.txt
+          exit 0
+        continue-on-error: true
+      
+      - name: If success
+        if: ${{ success() }}
+        run: |
+          echo "EXITO"
+          
+      - name: If error
+        if: ${{ failure() }}
+        run: |
+          echo "FRACASO"
+      
+        
+        
             
             
