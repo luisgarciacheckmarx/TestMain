@@ -1,3 +1,3 @@
 RET=1
 echo "Building desde main [$RET]" >> build.output
-exit 0
+exit $RET
