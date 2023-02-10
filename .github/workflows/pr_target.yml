@@ -156,7 +156,7 @@ jobs:
         uses: actions-js/push@v1.4
         with:
           # Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.SCS_TOKEN }}
           # Email used to configure user.email in `git config`.
           #author_email: # optional, default is github-actions[bot]@users.noreply.github.com
           # Name used to configure user.name in `git config`.
