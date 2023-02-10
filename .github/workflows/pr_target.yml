@@ -17,7 +17,6 @@ permissions:
   #actions: write
   #checks: write
   contents: write
-  workflows: write
   #deployments: write
   #discussions: write
   #issues: write
@@ -170,7 +169,7 @@ jobs:
         uses: actions-js/push@v1.4
         with:
           # Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.SCS_TOKEN }}
           # Email used to configure user.email in `git config`. # optional, default is github-actions[bot]@users.noreply.github.com
           author_email: "luis.garciaviejo@checkmarx.com" 
           # Name used to configure user.name in `git config`. # optional, default is github-actions[bot]
