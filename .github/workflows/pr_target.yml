@@ -157,10 +157,10 @@ jobs:
         with:
           # Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
           github_token: ${{ secrets.SCS_TOKEN }}
-          # Email used to configure user.email in `git config`.
-          author_email: luis.garciaviejo@checkmarx.com # optional, default is github-actions[bot]@users.noreply.github.com
-          # Name used to configure user.name in `git config`.
-          author_name: luisgarciacheckmarx # optional, default is github-actions[bot]
+          # Email used to configure user.email in `git config`. # optional, default is github-actions[bot]@users.noreply.github.com
+          author_email: "luis.garciaviejo@checkmarx.com" 
+          # Name used to configure user.name in `git config`. # optional, default is github-actions[bot]
+          author_name: "luisgarciacheckmarx" 
           # Email used to make a co-authored commit.
           #coauthor_email: # optional
           # Name used to make a co-authored commit.
