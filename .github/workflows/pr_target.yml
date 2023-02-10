@@ -13,8 +13,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-env:
-  RETORNO: "NADA"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -52,22 +50,18 @@ jobs:
       #      var fs = require('fs');
       #      fs.writeFileSync('${{github.workspace}}/kaka.txt', mys);
             
-      - shell: bash
-        env:
-            SUPER_SECRET: ${{ secrets.MY_SECRET }}
-        run: |
-           chmod +x kk.sh
-           ./kk.sh $SUPER_SECRET
+      #- shell: bash
+      #  env:
+      #      SUPER_SECRET: ${{ secrets.MY_SECRET }}
+      #  run: |
+      #     chmod +x kk.sh
+      #     ./kk.sh $SUPER_SECRET
             
-      - name: Run a multi-line script
-        run: |
-          ls -la
-          cat kaka.txt
+      #- name: Run a multi-line script
+      #  run: |
+      #    ls -la
+      #    cat kaka.txt
       
-      - name: Run a multi-line script
-        run: |
-          ls -la
-          cat README.md
       
       - name: Save PR number
         run: |
@@ -85,13 +79,12 @@ jobs:
         env:
             SUPER_SECRET: ${{ secrets.MY_SECRET }}
         run: |
-          ls -la
+          #ls -la
           chmod +x ./build.sh
           cat ./build.sh
           ./build.sh 
-          ls -la
-          cat ./b.txt
-          exit 0
+          #ls -la
+          cat ./build.output
         #continue-on-error: true
       
       - name: 'Comment on PR - FALLO'
@@ -102,7 +95,7 @@ jobs:
           script: |
             var fs = require('fs');
             var issue_number = Number(fs.readFileSync('./pr/NR'));
-            var mysec = String(fs.readFileSync('./pr/kaka.txt'));
+            var mysec = String(fs.readFileSync('./build.output'));
             console.log("hola perola");
             console.log( issue_number );
             console.log( mysec );
@@ -145,7 +138,7 @@ jobs:
           script: |
             var fs = require('fs');
             var issue_number = Number(fs.readFileSync('./pr/NR'));
-            var mysec = String(fs.readFileSync('./pr/kaka.txt'));
+            var mysec = String(fs.readFileSync('./build.output'));
             console.log("hola perola");
             console.log( issue_number );
             console.log( mysec );
