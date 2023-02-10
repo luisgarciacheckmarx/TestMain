@@ -1,1 +1,2 @@
-echo "Hola desde main" >> b.txt
+echo "Building desde main" >> b.txt
+exit 0
