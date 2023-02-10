@@ -108,17 +108,19 @@ jobs:
           ls -la
           cat ./b.txt
           exit 1
-        continue-on-error: true
+        #continue-on-error: true
       
+      - name: If error
+        if: ${{ failure() }}
+        run: |
+          echo "FRACASO"
+          
       - name: If success
         if: ${{ success() }}
         run: |
           echo "EXITO"
           
-      - name: If error
-        if: ${{ failure() }}
-        run: |
-          echo "FRACASO"
+      
       
         
         
