@@ -100,7 +100,6 @@ jobs:
             console.log( issue_number );
             console.log( mysec );
             var com = mysec;
-            #com = 'Build FAILED';
             await github.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
