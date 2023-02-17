@@ -43,4 +43,19 @@ jobs:
           if [[ ! $title =~ ^.*:\ .*$ ]]; then
              echo "Bad issue title"
              exit 1
+          else
+             echo "OK issue title"
+             exit 0
+          fi    
+
+      - name: Check title Fixed
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          if [[ ! $TITLE =~ ^.*:\ .*$ ]]; then
+             echo "Bad issue title"
+             exit 1
+          else
+             echo "OK issue title"
+             exit 0
           fi    
