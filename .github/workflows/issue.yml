@@ -52,6 +52,7 @@ jobs:
         env:
           TITLE: ${{ github.event.pull_request.title }}
         run: |
+          echo "STITLE"
           if [[ ! $TITLE =~ ^.*:\ .*$ ]]; then
              echo "Bad issue title"
              exit 1
