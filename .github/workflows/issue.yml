@@ -50,7 +50,7 @@ jobs:
 
       - name: Check title Fixed
         env:
-          TITLE: ${{ github.event.pull_request.title }}
+          TITLE: ${{ github.event.issue.title }}
         run: |
           echo "$TITLE"
           if [[ ! $TITLE =~ ^.*:\ .*$ ]]; then
