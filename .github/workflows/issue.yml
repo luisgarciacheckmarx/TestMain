@@ -36,4 +36,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          
+
+      - name: Check title
+        run: |
+          title="${{ github.event.issue.title }}"
+          if [[ ! $title =~ ^.*:\ .*$ ]]; then
+             echo "Bad issue title"
+             exit 1
+          fi    
